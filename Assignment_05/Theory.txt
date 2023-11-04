@@ -1,0 +1,48 @@
+Assignment No . 5
+AIM: Create Association Rules for the Market Basket Analysis for the given dataset.
+THEORY:
+Association Rules
+There are many ways to see the similarities between items. These are techniques that fall under the general umbrella of association. The outcome of this type of technique, in simple terms, is a set of rules that can be understood as “if this, then that”.
+
+Applications
+There are many applications of association:
+	Product recommendation – like Amazon’s “customers who bought that, also bought this”
+	Music recommendations – like Last FM’s artist recommendations
+	Medical diagnosis – like with diabetes really cool stuff
+	Content optimisation – like in magazine websites or blogs
+In this post we will focus on the retail application – it is simple, intuitive, and the dataset comes packaged with R making it repeatable.
+
+Apriori Algorithm
+
+Apriori algorithm is used to find patterns of relationships between one or more items in a dataset and this algorithm assumes that any subset of a frequent itemset must be frequent
+
+The importance of an association rules can be determined by three parameters.
+
+Support
+
+It is the percentage of transactions containing particular combination of items relative to the total number of transactions in the database.
+Confidence
+
+It is a measure of conditional probability. Given that the item on the left hand side (antecedent) is purchased then the item on the right hand side(consequent) would also be purchased.
+Confidence(antecedent => consequent)=(Transactions involving both antecedent and consequent)/(Transactions involving only antecedent)
+
+
+
+Lift
+It is the probability of all items occurring together divided by the product of antecedent and consequent occurring as if they are independent of each other
+Lift(antecedent => consequent) = Confidence(antecedent, consequent) / Support(consequent)
+Therefore, likelihood of a customer buying both antecedent and consequent together is ‘lift-value’ times more than the chance if purchasing alone.
+•	Lift (antecedent => consequent) = 1 means that there is no correlation within the itemset. 
+
+
+
+
+•	Lift (antecedent=> consequent) > 1 means that there is a positive correlation within the
+itemset, i.e., products in the itemset, antecedent, and consequent, are more likely to be bought together.
+
+•	Lift (antecedent=> consequent) < 1 means that there is a negative correlation within the itemset, i.e., products in itemset, antecedent, and consequent, are unlikely to be bought together.
+
+
+Conclusion:
+Thus we have implemented market basket analysis using Apriori algorithm and mined the  Assocation rule.
+
