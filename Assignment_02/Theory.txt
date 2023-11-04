@@ -1,0 +1,101 @@
+Group (A)
+ 	ASSIGNMENT NO.2	
+
+
+ Problem Statement:
+
+Assignment on Regression technique
+Download temperature data from below link. https://www.kaggle.com/venky73/temperatures of India?select=temperatures.csv. This data consists of temperatures of INDIA averaging the temperatures of all places month wise. Temperatures values are recorded in CELSIUS
+A.	Apply Linear Regression using suitable library function and predict the Month•wise temperature.
+B.	Assess the performance of regression models using MSE, MAE and R•Square metrics
+C.	Visualize simple regression model.
+
+
+Tools / Environment:	
+Python
+
+Related Theory:	
+
+
+Regression Models:
+
+Linear regression is perhaps one of the most well-known and well understood algorithms in statistics and machine learning. Machine learning, more specifically the field of predictive modeling is primarily concerned with minimizing the error of a model or making the most accurate predictions possible, at the expense of explainability. In applied machine learning we will borrow, reuse and steal algorithms from many different fields, including statistics and use them towards these ends.
+
+As such, linear regression was developed in the field of statistics and is studied as a model for understanding the relationship between input and output numerical variables, but has been borrowed by machine learning. It is both a statistical algorithm and a machine learning algorithm.
+
+Linear regression is a linear model, e.g. a model that assumes a linear relationship between the input variables (x) and the single output variable (y). More specifically, that y can be calculated from a linear combination of the input variables (x).
+
+When there is a single input variable (x), the method is referred to as simple linear regression. When there are multiple input variables, literature from statistics often refers to the method as multiple linear regression.
+ 
+Different techniques can be used to prepare or train the linear regression equation from data, the most common of which is called Ordinary Least Squares. It is common to therefore refer to a model prepared this way as Ordinary Least Squares Linear Regression or just Least Squares Regression.
+Now that we know some names used to describe linear regression, let’s take a closer look at the representation used.
+
+
+ 
+
+
+
+
+
+
+
+
+1.	Linear Regression Model Representation
+Linear regression is an attractive model because the representation is so simple. The representation is a linear equation that combines a specific set of input values (x) the solution to which is the predicted output for that set of input values (y). As such, both the input values (x) and the output value are numeric. The linear equation assigns one scale factor to each input value or column, called a coefficient and represented by the capital Greek letter Beta (B). One additional coefficient is also added, giving the line an additional degree of freedom (e.g. moving up and down on a two- dimensional plot) and is often called the intercept or the bias coefficient. For example, in a simple regression problem (a single x and a single y), the form of the model would be:
+y = B0 + B1*x
+
+In higher dimensions when we have more than one input (x), the line is called a plane or a hyper- plane. The representation therefore is the form of the equation and the specific values used for the coefficients (e.g. B0 and B1 in the above example).
+
+It is common to talk about the complexity of a regression model like linear regression. This refers to the number of coefficients used in the model.
+  
+When a coefficient becomes zero, it effectively removes the influence of the input variable on the model and therefore from the prediction made from the model (0 * x = 0). This becomes relevant if you look at regularization methods that change the learning algorithm to reduce the complexity of regression models by putting pressure on the absolute size of the coefficients, driving some to zero. Exploring ‘b1’
+•	If b1 > 0, then x(predictor) and y(target) have a positive relationship. That is increase in x will increase y.
+•	If b1 < 0, then x(predictor) and y(target) have a negative relationship. That is increase in x will decrease y.
+Exploring ‘b0’
+•	If the model does not include x=0, then the prediction will become meaningless with only b0. For example, we have a dataset that relates height(x) and weight(y). Taking x=0(that is height as 0), will make equation have only b0 value which is completely meaningless as in real-time height and weight can never be zero. This resulted due to considering the model values beyond its scope.
+•	If the model includes value 0, then ‘b0’ will be the average of all predicted values when x=0. But, setting zero for all the predictor variables is often impossible.
+•	The value of b0 guarantee that residual have mean zero. If there is no ‘b0’ term, then regression will be forced to pass over the origin. Both the regression co-efficient and prediction will be biased.
+
+2.	Ordinary Least Squares
+The Ordinary Least Squares procedure seeks to minimize the sum of the squared residuals. This means that given a regression line through the data we calculate the distance from each data point to the regression line, square it, and sum all of the squared errors together. This is the quantity that ordinary least squares seeks to minimize. This approach treats the data as a matrix and uses linear algebra operations to estimate the optimal values for the coefficients. It means that all of the data must be available and you must have enough memory to fit the data and perform matrix operations.
+It is unusual to implement the Ordinary Least Squares procedure yourself unless as an exercise in linear algebra. It is more likely that you will call a procedure in a linear algebra library. This procedure is very fast to calculate.
+
+3.	Gradient Descent
+ 
+This operation is called Gradient Descent and works by starting with random values for each coefficient. The sum of the squared errors are calculated for each pair of input and output values. A learning rate is used as a scale factor and the coefficients are updated in the direction towards minimizing the error. The process is repeated until a minimum sum squared error is achieved or no further improvement is possible.
+When using this method, you must select a learning rate (alpha) parameter that determines the size of the improvement step to take on each iteration of the procedure.
+
+Gradient descent is often taught using a linear regression model because it is relatively straightforward to understand. In practice, it is useful when you have a very large dataset either in the number of rows or the number of columns that may not fit into memory.
+
+4.	Regularization
+There are extensions of the training of the linear model called regularization methods. These seek to both minimize the sum of the squared error of the model on the training data (using ordinary least squares) but also to reduce the complexity of the model (like the number or absolute size of the sum of all coefficients in the model).
+
+Two popular examples of regularization procedures for linear regression are:
+
+•	Lasso Regression: where Ordinary Least Squares is modified to also minimize the absolute sum of the coefficients (called L1 regularization).
+•	Ridge Regression: where Ordinary Least Squares is modified to also minimize the squared absolute sum of the coefficients (called L2 regularization).
+These methods are effective to use when there is collinearity in your input values and ordinary least squares would overfit the training data.
+
+Assessing the performance of Regression Models:
+
+Evaluating the model accuracy is an essential part of the process in creating machine learning models to describe how well the model is performing in its predictions. Evaluation metrics change according to the problem type. In this post, we'll briefly learn how to check the accuracy of the regression model in R.
+
+The linear model (regression) can be a typical example of this type of problem, and the main characteristic of the regression problem is that the targets of a dataset contain the real numbers only. The errors represent how much the model is making mistakes in its prediction. The basic concept of accuracy evaluation is to compare the original target with the predicted one according to certain metrics.
+
+
+Regression model evaluation metrics:
+
+
+ 
+The MSE, MAE, RMSE, and R-Squared metrics are mainly used to evaluate the prediction error rates and model performance in regression analysis.
+
+•	MAE (Mean absolute error) represents the difference between the original and predicted values extracted by averaged the absolute difference over the data set.
+•	MSE (Mean Squared Error) represents the difference between the original and predicted values extracted by squared the average difference over the data set.
+•	RMSE (Root Mean Squared Error) is the error rate by the square root of MSE.
+•	R-squared (Coefficient of determination) represents the coefficient of how well the values fit compared to the original values. The value from 0 to 1 interpreted as percentages. The higher the value is, the better the model is.
+The above metrics can be expressed,
+
+
+ 
+ 
+
