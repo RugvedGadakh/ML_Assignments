@@ -1,0 +1,68 @@
+Data preparation is the process of cleaning and transforming raw data prior to processing and analysis. It is an important step prior to processing and often involves reformatting data, making corrections to data and the combining of data sets to enrich data.
+
+Data preparation helps:
+
+•	Fix errors quickly — Data preparation helps catch errors before processing. After data has been removed from its original source, these errors become more difficult to understand and correct.
+•	Produce top-quality data — Cleaning and reformatting datasets ensures that all data used in analysis will be high quality.
+•	Make better business decisions — Higher quality data that can be processed and analyzed more quickly and efficiently leads to more timely, efficient and high- quality business decisions.
+
+Loading data, cleaning data (removing unnecessary data or erroneous data), transforming data formats, and rearranging data are the various steps involved in the data preparation step
+
+Pandas
+Pandas is a software library written for Python. It is very famous in the data science community because it offers powerful, expressive, and flexible data structures that make data manipulation, analysis easy
+
+To use the pandas library, first import it
+
+import pandas as pd
+Loading data
+
+load the dataset in the system using the .read_csv() function in pandas.
+data = pd.read_csv('path_to_file.csv')
+
+Missing Data
+
+Handling Missing Data
+
+For numerical data, pandas uses a floating point value NaN (Not a Number) to represent missing data. It is a unique value defined under the library Numpy
+
+isnull() which returns a boolean true or false value. True, when the data at that particular index is actually missing or NaN. The opposite of this is
+the notnull() function.
+
+# To check if and what index in the dataset contains null value
+
+data.isnull()
+
+# To check where the dataset does not contain null value -opposite of isnull()
+
+data.notnull()
+
+dropna() function - to filter out missing data and to remove the null (missing) value and see only the non-null values.
+
+data.dropna()
+
+Filling in Missing Data
+
+To replace or rather "fill in" the null data, you can use the fillna() function
+
+Data Transformation
+
+To replace a non-null value with a different value replace() function can be used.
+
+data = pd.Series([1,2,-99,4,5,-99,7,8,-99])
+
+# Replace the placeholder -99 as NaN
+
+data.replace(-99, np.nan) 
+
+Concatenating Pandas Series
+ 
+
+To do this, we can use the concat() function in pandas
+# Create a new Series
+new_data = pd.Series([-100, 11, 12, 13])
+combined_series = pd.concat([data, new_data], ignore_index = True)
+
+Conclusion:
+Here we have learned and implemented various data cleaning and preparation techniques in python.
+
+
