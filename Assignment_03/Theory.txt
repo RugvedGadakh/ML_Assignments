@@ -1,0 +1,113 @@
+
+
+Assignment 3 
+To build a classification model using Decision trees and to Evaluate the performance of the model
+
+THEORY:
+Introduction
+Classification is a task of Machine Learning which assigns a label value to a specific class and then can identify a particular type to be of one kind or another. The most basic example can be of the mail spam filtration system where one can classify a mail as either “spam” or “not spam”.
+Classification Predictive Modeling in Machine Learning
+
+Classification usually refers to any kind of problem where a specific type of class label is the result to be predicted from the given input field of data. Some types of Classification challenges are :
+•	Classifying emails as spam or not
+•	Classify a given handwritten character to be either a known character or not
+•	Classify recent user behaviour as churn or not
+
+For any model, you will require a training dataset with many examples of inputs and outputs from which the model will train itself. The training data must include all the possible scenarios of the problem and must have sufficient data for each label for the model to be trained correctly. Class labels are often returned as string values and hence needs to be encoded into an integer like either representing 0 for “spam” and 1 for “no-spam”
+
+Generally, the different types of predictive models in machine learning are as follows :
+
+•	Binary classification
+•	Multi-Label Classification
+•	Multi-Class Classification
+•	Imbalanced Classification
+ 
+Binary Classification for Machine Learning
+
+A binary classification refers to those tasks which can give either of any two class labels as the output. Generally, one is considered as the normal state and the other is considered to be the abnormal state. The following examples will help you to understand them better.
+•	Email Spam detection: Normal State – Not Spam, Abnormal State – Spam
+•	Conversion prediction: Normal State – Not churned, Abnormal State – Churn
+•	Conversion Prediction: Normal State – Bought an item, Abnormal State – Not bought an item
+
+The most popular algorithms which are used for binary classification are :
+
+•	K-Nearest Neighbours
+•	Logistic Regression
+•	Support Vector Machine
+•	Decision Trees
+•	Naive Bayes
+
+Multi-Class Classification
+•	These types of classification problems have no fixed two labels but can have any number of labels. Some popular examples of multi-class classification are :
+•	Plant Species Classification
+•	Face Classification
+•	Optical Character recognition
+
+Here there is no notion of a normal and abnormal outcome but the result will belong to one of many among a range of variables of known classes. There can also be a huge number of labels like predicting a picture as to how closely it might belong to one out of the tens of thousands of the faces of the recognition system.
+
+The most common algorithms which are used for Multi-Class Classification are :
+
+•	K-Nearest Neighbours
+•	Naive Bayes
+•	Decision trees
+•	Gradient Boosting
+•	Random Forest
+•
+ 
+Multi-Label Classification for Machine Learning
+
+In multi-label Classification, we refer to those specific classification tasks where we need to assign two or more specific class labels that could be predicted for each example. A basic example can be photo classification where a single photo can have multiple objects in it like a dog or an apple and etcetera. The main difference is the ability to predict multiple labels and not just one.
+
+The common algorithms used here are :
+
+•	Multi-label Random Forests
+•	Multi-label Decision trees
+•	Multi-label Gradient Boosting
+
+Decision Tree Classification Algorithm
+o	Decision Tree is a Supervised learning technique that can be used for both classification and Regression problems, but mostly it is preferred for solving Classification problems. It is a tree-structured classifier, where internal nodes represent the features of a dataset, branches represent the decision rules and each leaf node represents the outcome.
+o	In a Decision tree, there are two nodes, which are the Decision Node and Leaf Node. Decision nodes are used to make any decision and have multiple branches, whereas Leaf nodes are the output of those decisions and do not contain any further branches.
+o	The decisions or the test are performed on the basis of features of the given dataset.
+o	It is a graphical representation for getting all the possible solutions to a problem/decision based on given conditions.
+o	It is called a decision tree because, similar to a tree, it starts with the root node, which expands on further branches and constructs a tree-like structure.
+o	In order to build a tree, we use the CART algorithm, which stands for Classification and Regression Tree algorithm.
+o	A decision tree simply asks a question, and based on the answer (Yes/No), it further split the tree into subtrees.
+o	Below diagram explains the general structure of a decision tree:
+ 
+
+ 
+
+Decision Tree Terminologies
+
+Root Node: Root node is from where the decision tree starts. It represents the entire dataset, which further gets divided into two or more homogeneous sets.
+Leaf Node: Leaf nodes are the final output node, and the tree cannot be segregated further after getting a leaf node.
+Splitting: Splitting is the process of dividing the decision node/root node into sub-nodes according to the given conditions.
+Branch/Sub Tree: A tree formed by splitting the tree.
+Pruning: Pruning is the process of removing the unwanted branches from the tree. Parent/Child node: The root node of the tree is called the parent node, and other nodes are called the child nodes.
+
+Algorithm
+o	Step-1: Begin the tree with the root node, says S, which contains the complete dataset.
+o	Step-2: Find the best attribute in the dataset using Attribute Selection Measure (ASM).
+o	Step-3: Divide the S into subsets that contains possible values for the best attributes.
+o	Step-4: Generate the decision tree node, which contains the best attribute.
+o	Step-5: Recursively make new decision trees using the subsets of the dataset created in step
+-3. Continue this process until a stage is reached where you cannot further classify the nodes and called the final node as a leaf node.
+Advantages of the Decision Tree
+
+o	It is simple to understand as it follows the same process which a human follow while making any decision in real-life.
+o	It can be very useful for solving decision-related problems.
+o	It helps to think about all the possible outcomes for a problem.
+ 
+
+o	There is less requirement of data cleaning compared to other algorithms.
+
+Disadvantages of the Decision Tree
+
+o	The decision tree contains lots of layers, which makes it complex.
+o	It may have an overfitting issue, which can be resolved using the Random Forest algorithm.
+o	For more class labels, the computational complexity of the decision tree may increas
+
+Conclusion:
+Thus we have created a decision tree model and evaluated the performance for the given dataset.
+
+
