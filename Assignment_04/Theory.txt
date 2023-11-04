@@ -1,0 +1,87 @@
+Assignment No . 4
+AIM: To implement K-Means Clustering and visualize the clusters for customer segmentation.
+
+THEORY:
+Unsupervised learning:
+
+Unsupervised learning is the machine learning task of inferring a function to describe hidden structure from unlabeled data. Since the examples given to the learner are unlabeled, there is no error or reward signal to evaluate a potential solution. This distinguishes unsupervised learning from supervised learning and reinforcement learning.
+Unsupervised learning studies how systems can learn to represent particular input patterns in a way that reflects the statistical structure of the overall collection of input patterns. By contrast with SUPERVISED LEARNING or REINFORCEMENT LEARNING, there are no explicit target outputs or environmental evaluations associated with each input; rather the unsupervised learner brings to bear prior biases as to what aspects of the structure of the input should be captured in the output.
+Unsupervised learning is a type of machine learning algorithm used to draw inferences from datasets consisting of input data without labeled responses. The most common unsupervised learning method is cluster analysis, which is used for exploratory data analysis to find hidden patterns or grouping in data.
+
+
+K-Means Clustering
+
+K-means (MacQueen, 1967) is one of the simplest unsupervised learning algorithms that solve the well known clustering problem. The procedure follows a simple and easy way to classify a given data set through a certain number of clusters (assume k clusters) fixed a priori. The main idea is to define k centroids, one for each cluster. These centroids shoud be placed in a cunning way because of different location causes different result. So, the better choice is to place them as much as possible far away from each other. The next step is to take each point belonging to a given data set and associate it to the nearest centroid. When no point is pending, the first step is completed and an early groupage is done. At this point we need to re-calculate k new centroids as barycenters of the clusters resulting from the previous step. After we have these k new centroids, a new binding has to be done between the same data set points and the nearest new centroid. A loop has been generated. As a result of this loop we may notice that the k centroids change their location step by step until no more changes are done. In other words centroids do not move any more. Finally, this algorithm aims at minimizing an objective function, in this case a squared error function. The objective function:
+
+
+
+
+
+where	is a chosen distance measure between a data point and the cluster centre , is an indicator of the distance of the n data points from their respective cluster centres. The algorithm is composed of the following steps:
+1.	Place K points into the space represented by the objects that are being clustered. These points represent initial group centroids.
+2.	Assign each object to the group that has the closest centroid.
+3.	When all objects have been assigned, recalculate the positions of the K centroids.
+4.	Repeat Steps 2 and 3 until the centroids no longer move. This produces a separation of the objects into groups from which the metric to be minimized can be calculated.
+Advantages
+
+1)	Fast, robust and easier to understand.
+
+2)	Relatively efficient: O(tknd), where n is # objects, k is # clusters, d is # dimension of each object, and t is # iterations. Normally, k, t, d << n.
+3)	Gives best result when data set are distinct or well separated from each other. Disadvantages
+1)	The learning algorithm requires apriori specification of the number of cluster centers.
+
+2)	The use of  Exclusive Assignment - If there are two highly overlapping data then k-means will not be able to resolve	that there are two clusters.
+3)	The learning algorithm is not invariant to non-linear transformations i.e. with different representation of data we get
+different results (data represented in form of cartesian co-ordinates and polar co-ordinates will give different results).
+4)	Euclidean distance measures can unequally weight underlying factors.
+
+5)	The learning algorithm provides the local optima of the squared error function.
+
+6)	Randomly choosing of the cluster center cannot lead us to the fruitful result.
+
+7)	Applicable only when mean is defined i.e. fails for categorical data.
+
+8)	Unable to handle noisy data and outliers.
+
+
+Hierarchical Clustering
+Cluster Analysis (data segmentation) has a variety of goals that relate to grouping or segmenting a collection of objects (i.e., observations, individuals, cases, or data rows) into subsets or clusters, such that those within each cluster are more closely related to one another than objects assigned to different clusters. Central to all of the goals of cluster analysis is the notion of degree of similarity (or dissimilarity) between the individual objects being clustered. There are two major methods of clustering: hierarchical clustering and k-means clustering. For information on k-means clustering, refer to the k-Means Clustering section.
+In hierarchical clustering, the data is not partitioned into a particular cluster in a single step. Instead, a series of partitions takes place, which may run from a single cluster containing all objects to n clusters that each contain a single object. Hierarchical Clustering is subdivided into agglomerative methods, which proceed by a series of fusions of the n objects into groups, and divisive methods, which separate n objects successively into finer groupings. Agglomerative techniques are more commonly used, and this is the method implemented in XLMiner. Hierarchical clustering may be represented by a two-dimensional diagram known as a dendrogram, which illustrates the fusions or divisions made at each successive stage of analysis. Following is an example of a dendrogram.
+
+
+Agglomerative methods
+
+An agglomerative hierarchical clustering procedure produces a series of partitions of the data, Pn, Pn-1, , P1. The first Pn consists of n single object clusters, the last P1, consists of single
+group containing all n cases.
+
+At each particular stage, the method joins together the two clusters that are closest together (most similar). (At the first stage, this amounts to joining together the two objects that are closest together, since at the initial stage each cluster has only one object.)
+
+
+Divisive method
+ 
+In this method we assign all of the observations to a single cluster and then partition the cluster to two least similar clusters. Finally, we proceed recursively on each cluster until there is one cluster for each observation.
+
+
+Single Linkage
+
+In single linkage hierarchical clustering, the distance between two clusters is defined as the shortest distance between two points in each cluster. For example, the distance between clusters “r” and “s” to the left is equal to the length of the arrow between their two closest points.
+
+
+Complete Linkage
+
+In complete linkage hierarchical clustering, the distance between two clusters is defined as the longest distance between two points in each cluster. For example, the distance between clusters “r” and “s” to the left is equal to the length of the arrow between their two furthest points.
+
+
+Average Linkage
+ 
+average linkage hierarchical clustering, the distance between two clusters is defined as the average distance between each point in one cluster to every point in the other cluster. For example, the distance between clusters “r” and “s” to the left is equal to the average length each arrow between connecting the points of one cluster to the other.
+
+
+if your data is small then go for Hierarchical Clustering and if it is large then go for K-Means Clustering.
+
+
+
+Thus we have implemented K means clustering algorithm and visualized the clusters for customer segmentation dataset.
+
+
+
